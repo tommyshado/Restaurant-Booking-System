@@ -1,6 +1,8 @@
 const restaurant = (db) => {
 
-
+    const getTablabes = async ()=> {
+        
+    } 
 
     return {
 

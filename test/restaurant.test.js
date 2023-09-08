@@ -3,9 +3,7 @@ import Resturent_booking_table from "../service/rastaurant.js";
 import pgPromise from 'pg-promise';
 
 const connectionString = process.env.DATABASE_URL || dbstring
-
 const db = pgPromise()(connectionString);
-
 
 describe("The restaurant booking table", function () {
     beforeEach(async function () {
@@ -53,21 +51,21 @@ describe("The restaurant booking table", function () {
         assert.deepEqual(true, false);
     });
 
-    it("Create a test case to attempt booking a table with an invalid table name.", async function () {
+    it("Attempt booking a table with an invalid table name.", async function () {
         let resturent_booking_table = Resturent_booking_table(db);
 
 
         assert.deepEqual(true, false);
     });
 
-    it("Create a test case to retrieve a list of all tables and their booking statuses.", async function () {
+    it("Retrieve a list of all tables and their booking statuses.", async function () {
         let resturent_booking_table = Resturent_booking_table(db);
 
 
         assert.deepEqual(true, false);
     });
 
-    it("Create a test case to retrieve a list of available tables.", async function () {
+    it("Retrieve a list of available tables.", async function () {
         let resturent_booking_table = Resturent_booking_table(db);
 
 
