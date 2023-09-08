@@ -88,7 +88,14 @@ describe("The restaurant booking table", function () {
     });
 
     
-    it("should list all booked tables.", async function () {
+    it("should not add multiple table bookings.", async function () {
+        let Resturent_booking_table = resturent_booking_table(db);
+        
+      
+        assert.deepEqual(true, false);
+    });
+
+    it("should be able to add one table booking.", async function () {
         let Resturent_booking_table = resturent_booking_table(db);
         
       
