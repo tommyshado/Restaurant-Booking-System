@@ -1,17 +1,15 @@
 import assert from "assert"
-import resturent_booking_table  from "../service/rastaurant.js";
+import resturent_booking_table from "../service/rastaurant.js";
 import pgPromise from 'pg-promise';
 
 const connectionString = process.env.DATABASE_URL || dbstring
-
 const db = pgPromise()(connectionString);
-
 
 describe("The restaurant booking table", function () {
     beforeEach(async function () {
         try {
             // clean the tables before each test run
-            await db.none("TRUNCATE TABLE restuarant_table_booking RESTART IDENTITY CASCADE;");
+            // await db.none("TRUNCATE TABLE restuarant_table_booking RESTART IDENTITY CASCADE;");
         } catch (err) {
             console.log(err);
             throw err;
