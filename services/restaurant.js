@@ -2,19 +2,17 @@ const restaurant = (db) => {
 
     async function getTables() {
         // get all the available tables
-
     }
 
     async function bookTable(tableName) {
         // book a table by name
-
     }
 
-    async function isTableBooked() {
+    async function getBookedTables() {
         // get all the booked tables
     }
 
-    async function getBookedTable(tableName) {
+    async function isTableBooked(tableName) {
         // get booked table by name
     }
 
@@ -22,17 +20,18 @@ const restaurant = (db) => {
         // cancel a table by name
     }
 
-    async function editTableBooking(tableName) {
-        // edit table booking
+    async function getBookedTablesForUser(username) {
+        // get user table booking
     }
 
     return {
         getTables,
         bookTable,
+        getBookedTables,
         isTableBooked,
-        getBookedTable,
         cancelTableBooking,
-        editTableBooking
+        editTableBooking,
+        getBookedTablesForUser
     }
 }
 
