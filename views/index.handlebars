@@ -2,6 +2,14 @@
 
     <h2 class="title is-2">Select a table to book</h2>
 
+    <div class="notification is-danger is-light">
+        {{!-- you can remove the button below if you want --}}
+        <button class="delete"></button>
+        Flash messages goes here...
+        <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a>
+    </div>
+
+
     <div class="columns">
 
         {{#each tables}}
