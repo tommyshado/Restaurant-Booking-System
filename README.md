@@ -1,9 +1,21 @@
 # Restaurant-Booking-System 
 
-Scenario: Restaurant Booking System Assessment
+**Scenario**: Restaurant Booking System Assessment
 
-Background: You are tasked with creating a restaurant booking system for a popular restaurant chain called "Delicious Delights." The system will allow customers to make reservations for tables, and restaurant staff to see these reservations via an admin dashboard. The system should be user-friendly and efficient.
+**Background:** You are tasked with creating a restaurant booking system for a popular restaurant chain called "Delicious Delights." The system will allow customers to make reservations for tables, and restaurant staff to see these reservations via an admin dashboard. The system should be user-friendly and efficient.
 
+You need to:
+
+* Use the supplied ExpressJS routes & SQL scripts.
+     * Run `npm install` followed by `npm run dev` to get going.
+* Make the supplied Unit tests pass. 
+     * Run - `npm test`
+     * Just make the specified tests pass - there is no need to add more tests
+* Implement the required functionality in the `restuarant.js` Factory Function file.
+     * Once all the tests pass you should have everything you need for all the screens
+     * **But** work using **thin slices** - once some tests pass implements the corresponding screens in `ExpressJS`. **Tip** get the `getTables` method working and implement the `/` route functionality first.
+* Add the required routes in `index.js` - two routes are supplied `/` & `/bookings`.
+* Add the other required routes & change the existing routes to use the Factory Function
 
 ## Requirements 
 
