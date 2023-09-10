@@ -2,12 +2,14 @@
 
 **Scenario**: Restaurant Booking System Assessment
 
-**Background:** You are tasked with creating a restaurant booking system for a popular restaurant chain called "Delicious Delights." The system will allow customers to make reservations for tables, and restaurant staff to see these reservations via an admin dashboard. The system should be user-friendly and efficient.
+**Background:** You are tasked with creating a restaurant booking system for a popular restaurant chain called "Delicious Delights." The system will allow customers to make reservations for tables, and restaurant staff to see these reservations via an admin dashboard.
 
 You need to:
 
 * Use the supplied ExpressJS routes & SQL scripts.
      * Run `npm install` followed by `npm run dev` to get going.
+     * The app will start on port `3000`.
+     * Create PostgreSQL database and run the scripts in the `./sql` folder in the created database.
 * Make the supplied Unit tests pass. 
      * Run - `npm test`
      * Just make the specified tests pass - there is no need to add more tests
@@ -31,18 +33,17 @@ Routes   | HTTP Method | Description
 
 `View Available Tables:`
 
-Customers can view a list of available tables, including table size & availability status.
+Customers can view a list of available tables, including table size & availability status. Use the `/` route for this.
 
 `Make a Reservation:`
 
-Customers can select a table and make or cancel a reservation. They can see all the reservations they have made.
+Customers can select a table and make or cancel a reservation. They can see all the reservations they have made on the `/bookings/:username` route.
 
 ### For Admin:
 
 `Dashboard Overview`
 
-The admin dashboard provides an overview of all the restaurant's reservations  and allow for cancellations. 
-
+The admin dashboard provides an overview of all the restaurant's reservations and allow for cancellations. Find the dashboard at `/bookings`
 
 ## Database setup
 
