@@ -4,5 +4,6 @@ CREATE TABLE table_booking (
     capacity int not null,
     booked boolean not null,
     username text,
-    number_of_people int
+    number_of_people int,
+    contact_number int
 );
