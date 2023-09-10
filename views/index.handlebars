@@ -1,11 +1,17 @@
 <form action="/book" method="post">
 
-    <h2 class="title is-2">Select a table to book</h2>
+    <h2 class="title is-2">Book a table</h2>
 
     <div class="notification is-danger is-light">
         {{!-- you can remove the button below if you want --}}
         <button class="delete"></button>
-        Flash messages goes here...
+        Error Flash messages goes here...
+        <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a>
+    </div>
+    <div class="notification is-success is-light">
+        {{!-- you can remove the button below if you want --}}
+        <button class="delete"></button>
+        Success Flash messages goes here...
         <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a>
     </div>
 
@@ -64,29 +70,35 @@
         {{/each}}
     </div>
 
-    <div class="field">
-        <label for="" class="label">Number of people in booking</label>
-        <div class="control">
-            <input class="input" type="text" name="booking_size">
+    <div class="columns">
+        <div class="column is-3">
+            <div class="field">
+                <label for="" class="label">Number of people in booking</label>
+                <div class="control">
+                    <input class="input" type="text" name="booking_size">
+                </div>
+            </div>
+        </div>
+        <div class="column is-3">
+            <div class="field">
+                <label for="" class="label">Username</label>
+                <div class="control">
+                    <input class="input" type="text" name="username">
+                </div>
+            </div>
+        </div>
+        <div class="column is-3">
+            <div class="field">
+                <label for="" class="label">Phone number</label>
+                <div class="control">
+                    <input class="input" type="text" name="phone_number">
+                </div>
+            </div>
         </div>
     </div>
 
-
     <div class="field">
-        <label for="" class="label">Username</label>
-        <div class="control">
-            <input class="input" type="text" name="username">
-        </div>
-    </div>
-
-    <div class="field">
-        <label for="" class="label">Phone number</label>
-        <div class="control">
-            <input class="input" type="text" name="phone_number">
-        </div>
-    </div>
-    <div class="field">
-        <input class="button" type="submit" value="Book">
+        <input class="button is-primary" type="submit" value="Book">
     </div>
 </form>
 </div>

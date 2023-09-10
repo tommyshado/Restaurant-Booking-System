@@ -22,10 +22,10 @@ You need to:
 Routes   | HTTP Method | Description 
 ---|----|---
 `/` | GET | Show tables that can be booked and allow client to book a tablle that is not already booked. Hide the radio button for table that are already booked.
-`/book` | POST | Book a table that has not already been booked. If the number of customers is bigger than the table's capacity the table can't be booked. Show a flash error message in this scnario
+`/book` | POST | Book a table that has not already been booked. If the number of customers is bigger than the table's capacity the table can't be booked. Show a flash error message in this scenario. Redirect back to the `/` route - with the required flash message.
 `/bookings` | GET | Show all the bookings made
 `/bookings/:username` | GET | Show all the bookings made by a given user. Allow booking cancellations
-`/cancel` | POST | Cancel the booking booking for the selected table
+`/cancel` | POST | Cancel the booking booking for the selected table. Redirect back to the `/bookings` screen.
 
 ### For Customers 
 
