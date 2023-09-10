@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "dev": "nodemon",
     "start": "node index.js",
     "test": "mocha"
   },
@@ -29,6 +30,7 @@
     "express-handlebars": "^7.1.2",
     "flash-express": "^1.0.4",
     "mocha": "^10.2.0",
+    "nodemon": "^3.0.1",
     "pg-promise": "^11.5.4"
   }
 }

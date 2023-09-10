@@ -6,6 +6,7 @@ import flash from "flash-express";
 
 const app = express()
 
+app.use(express.static('public'));
 app.use(flash());
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -22,7 +23,12 @@ app.set('view engine', 'handlebars');
 
 app.get("/", (req, res) => {
 
-    res.render('index')
+    res.render('index', { tables : [{}, {}, {}, {}, {}, {}]})
+});
+
+
+app.get("/bookings", (req, res) => {
+    res.render('bookings', { tables : [{}, {}, {}, {}, {}, {}]})
 });
 
 

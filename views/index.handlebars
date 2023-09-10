@@ -1,1 +1,40 @@
-<h1> Restaurent Bookings </h1>
+<h1> Restaurant Bookings </h1>
+
+<form action="/book" method="post">
+    <h2>Select a table to book</h2>
+    <div class="tables">
+
+
+        {{#each tables}}
+        <div class="table">
+            <div>
+                <strong>Table name here...</strong>
+            </div>
+            <div>
+                <strong>Capacity</strong><span>5</span>
+            </div>
+            <div>
+                <label for="tableId">Select table:</label>
+                <input type="radio" name="tableId" id="tableId">
+            </div>
+        </div>
+        {{/each}}
+
+
+        <div>
+
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="username">
+            </div>
+            <div>
+                <label for="">Phone number</label>
+                <input type="text" name="phone_number">
+            </div>
+            <div>
+                <label for="">Username</label>
+                <input type="submit" value="Book">
+            </div>
+        </div>
+</form>
+</div>
