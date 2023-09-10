@@ -7,24 +7,26 @@ Background: You are tasked with creating a restaurant booking system for a popul
 
 ## Requirements
 
+Routes   | HTTP Method | Description
+---|----|---
+`/` | GET | Show tables that can be booked and allow client to book a tablle that is not already booked.
+`/book` | POST | Book a table that has not already been booked. If the number of customers is bigger than the table's capacity the table can't be booked. Show a flash error message in this scnario
+`/bookings` | GET | Show all the bookings made
+`/bookings/:username` | GET | Show all the bookings made by a given user. Allow booking cancellations
+`/cancel` | POST | Cancel the booking booking for the selected table
+
 ### For Customers 
 
 `View Available Tables:`
 
-Customers can view a list of available tables, including table size, availability status, and any special features.
+Customers can view a list of available tables, including table size & availability status.
 
 `Make a Reservation:`
 
-Customers can select a table, choose a date and time, and make a reservation. View and Modify Reservations: Customers can view their existing reservations, modify reservation details, or cancel reservations.
+Customers can select a table and make or cancel a reservation. They can see all the reservations they have made.
 
 ### For Admin:
 
 `Dashboard Overview`
 
-The admin dashboard should provide an overview of the restaurant's reservations for the day, week, including total bookings, cancellations. 
-
-`Manage Reservations`
-
-Admins can view, edit, or cancel customer reservations. 
-They can also manually add reservations or mark tables as unavailable.
-
+The admin dashboard provides an overview of all the restaurant's reservations  and allow for cancellations. 
