@@ -32,13 +32,12 @@
                     <div class="control">
                         {{#if booked}}
                         <span class="tag is-info">Table booked</span>
-                        {{/if}}
-                        {{#unless booked}}
+                        {{else}}
                         <label class="radio">
                             <input type="radio" name="tableId" id="tableId">
                             Book this table
                         </label>
-                        {{/unless}}
+                        {{/if}}
                     </div>
 
 
