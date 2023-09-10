@@ -21,6 +21,12 @@ const restaurant = (db) => {
     async function cancelTableBooking(tableName) {
         // cancel a table by name
     }
+
+    async function editTableBooking(tableName) {
+        // edit table booking
+    }
+
+    
      
 
 
