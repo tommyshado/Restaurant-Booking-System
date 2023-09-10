@@ -7,6 +7,8 @@ Background: You are tasked with creating a restaurant booking system for a popul
 
 ## Requirements
 
+
+
 ### For Customers 
 
 `View Available Tables:`
@@ -27,4 +29,8 @@ The admin dashboard should provide an overview of the restaurant's reservations 
 
 Admins can view, edit, or cancel customer reservations. 
 They can also manually add reservations or mark tables as unavailable.
+
+**NB** - Create your database on [ElephantSQL](https://customer.elephantsql.com/login) and deploy your webapp to [Render](https://render.com/)
+
+
 
