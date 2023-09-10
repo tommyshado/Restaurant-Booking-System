@@ -30,3 +30,17 @@ Customers can select a table and make or cancel a reservation. They can see all 
 `Dashboard Overview`
 
 The admin dashboard provides an overview of all the restaurant's reservations  and allow for cancellations. 
+
+
+## Database setup
+
+**NB** - Create your database on [ElephantSQL](https://customer.elephantsql.com/login) and deploy your webapp to [Render](https://render.com/).
+
+Make sure your tests are running in `GitHub Actions`.
+
+Use the supplied sql scripts in GitHub Actions like this:
+
+```
+
+```
+
