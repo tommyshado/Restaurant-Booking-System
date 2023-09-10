@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars');
 
 app.get("/", (req, res) => {
 
-    res.render('index', { tables : [{}, {}, {}, {}, {}, {}]})
+    res.render('index', { tables : [{}, {}, {booked : true}, {}, {}, {}]})
 });
 
 

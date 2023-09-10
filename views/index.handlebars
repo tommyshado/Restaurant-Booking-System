@@ -30,11 +30,14 @@
                 <div class="panel-block">
 
                     <div class="control">
+                        {{#if booked}}
+                        <span class="tag is-info">Table booked</span>
+                        {{else}}
                         <label class="radio">
                             <input type="radio" name="tableId" id="tableId">
                             Book this table
                         </label>
-
+                        {{/if}}
                     </div>
 
 
@@ -45,7 +48,7 @@
 
         {{/each}}
     </div>
-    
+
     <div class="field">
         <label for="" class="label">Number of people in booking</label>
         <div class="control">
