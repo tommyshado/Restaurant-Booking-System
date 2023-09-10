@@ -72,3 +72,11 @@ Use the supplied sql scripts in GitHub Actions like this:
 ```
 
 > **Note:** add your your own build steps in the yml `./github/workflows/node-deploy.yml/`. You can look at this [example](https://github.com/codex-academy/BasicExpressWebApp/blob/master/.github/workflows/node-pgsql.js.yml) from [crud.projectcodex.co](http://crud.projectcodex.co).
+
+## Note
+
+* Do some planning. Spend 30 minutes on planning & understanding the task at hand.
+* Ask clarifying questions if needed.
+* Create a Kanban board
+* Share your application links in the feedback system. Watch out for the notification email.
+* Please commit your final submission by **16h00**.
