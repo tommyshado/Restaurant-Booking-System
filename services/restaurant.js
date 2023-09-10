@@ -26,7 +26,11 @@ const restaurant = (db) => {
         // edit table booking
     }
 
-    
+    async function get(params) {
+        
+    }
+
+
      
 
 
