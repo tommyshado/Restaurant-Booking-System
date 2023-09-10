@@ -1,6 +1,8 @@
 
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
     /* background-color: #ff7d00; */
     /* color: #15616d; */
 }
@@ -11,7 +13,7 @@ body {
     flex-wrap: wrap;
 }
 
-.table {
+.table-booking {
     margin: 1em;
     padding: 1em;
     width: 10em;

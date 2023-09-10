@@ -1,40 +1,74 @@
-<h1> Restaurant Bookings </h1>
+<h1 class="title"> Restaurant Bookings </h1>
 
 <form action="/book" method="post">
-    <h2>Select a table to book</h2>
-    <div class="tables">
 
+    <h2 class="title is-2">Select a table to book</h2>
+
+    <div class="columns">
 
         {{#each tables}}
-        <div class="table">
-            <div>
-                <strong>Table name here...</strong>
-            </div>
-            <div>
-                <strong>Capacity</strong><span>5</span>
-            </div>
-            <div>
-                <label for="tableId">Select table:</label>
-                <input type="radio" name="tableId" id="tableId">
+
+        <div class="column">
+            <div class="panel">
+                <p class="panel-heading">
+                    Table XYZ
+                </p>
+                <div class="panel-block">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Table capacity</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-static" type="email" value="5" readonly>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-block">
+
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="tableId" id="tableId">
+                            Book this table
+                        </label>
+
+                    </div>
+
+
+                </div>
             </div>
         </div>
+
+
         {{/each}}
+    </div>
 
-
-        <div>
-
-            <div>
-                <label for="">Username</label>
-                <input type="text" name="username">
-            </div>
-            <div>
-                <label for="">Phone number</label>
-                <input type="text" name="phone_number">
-            </div>
-            <div>
-                <label for="">Username</label>
-                <input type="submit" value="Book">
-            </div>
+    <div class="field">
+        <label for="" class="label">Number of people in booking</label>
+        <div class="control">
+            <input class="input" type="text" name="booking_size">
         </div>
+    </div>
+
+
+    <div class="field">
+        <label for="" class="label">Username</label>
+        <div class="control">
+            <input class="input" type="text" name="username">
+        </div>
+    </div>
+
+    <div class="field">
+        <label for="" class="label">Phone number</label>
+        <div class="control">
+            <input class="input" type="text" name="phone_number">
+        </div>
+    </div>
+    <div class="field">
+        <input class="button" type="submit" value="Book">
+    </div>
 </form>
 </div>

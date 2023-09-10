@@ -1,15 +1,21 @@
-<h1>Bookings</h1>
+<h1 class="title" >Bookings</h1>
 
-<label for="">Bookings for</label> <input type="text" placeholder="enter username" > <input type="submit">
+    <div class="field">
+        <label class="label" for="">Bookings for</label>
+        <input class="input is-normal is-2" type="text" placeholder="enter username" > 
+    </div>
+    <div class="field" >
+        <input class="button is-small is-info" type="submit" value="Search">
+    </div>
 
-
-<table>
+<table class="table is-fullwidth" >
     <tr>
         <th>Table name</th>
         <th>Table capacity</th>
-        <th>Qty booked</th>
+        <th>Booking size</th>
         <th>Booked by</th>
         <th>Contact number</th>
+        <th></th>
     </tr>
     <tr>
         <td>Table 1</td>
@@ -17,19 +23,29 @@
         <td>2</td>
         <td>Indiana Jones</td>
         <td>082 900 1276</td>
+        <td>
+            <button class="button is-small is-warning" >Cancel booking</button>
+        </td>
     </tr>
     <tr>
-        <td>Table 1</td>
+        <td>Table 2</td>
         <td>4</td>
         <td>2</td>
         <td>Lara Croft</td>
         <td>082 786 3432</td>
+        <td>
+            <button class="button is-small is-warning" >Cancel booking</button>
+        </td>
+
     </tr>
     <tr>
-        <td>Table 1</td>
+        <td>Table 3</td>
         <td>4</td>
         <td>2</td>
         <td>Indiana Jones</td>
         <td>082 900 1276</td>
+        <td>
+            <button class="button is-small is-warning" >Cancel booking</button>
+        </td>
     </tr>
 </table>

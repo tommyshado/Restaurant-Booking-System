@@ -1,5 +1,5 @@
 import express from "express";
-import pg from "pg-promise";
+import pgp from "pg-promise";
 import exphbs from "express-handlebars";
 import bodyParser from "body-parser";
 import flash from "flash-express";
