@@ -41,6 +41,11 @@ Make sure your tests are running in `GitHub Actions`.
 Use the supplied sql scripts in GitHub Actions like this:
 
 ```
-
+ - name: create postgresql tables
+      run: PGPASSWORD=coder123 psql -h localhost -U coder -d restuarant_bookings -a -f ./sql/tables.sql
+ - name: create postgresql tables
+      run: PGPASSWORD=coder123 psql -h localhost -U coder -d restuarant_bookings -a -f ./sql/data.sql
 ```
+
+> **Note:** add your your own build steps in the yml `./github/workflows/node-deploy.yml/`. You can look at this [example](https://github.com/codex-academy/BasicExpressWebApp/blob/master/.github/workflows/node-pgsql.js.yml) from [crud.projectcodex.co](http://crud.projectcodex.co).
 
