@@ -76,7 +76,16 @@ app.get("/bookings", async (req, res) => {
     res.render('bookings', { tables : bookings});
 });
 
-app.get("/booking:username", (req, res) => {});
+app.get("/booking:username", async (req, res) => {
+    // get the username from the params and...
+    const name = req.params.username;
+    // pass the username into the factory function
+    const bookedTableUser = await Restaurant.getBookedTablesForUser(name);
+    // Get back to the home route
+    res.redirect("bookings", {
+        tables: bookedTableUser,
+    });
+});
 
 app.post("/cancel:tableName", async (req, res) => {
     const tableName = req.params.tableName;
