@@ -2,6 +2,8 @@ const restaurant = (db) => {
 
     async function getTables() {
         // get all the available tables
+        // CHECK if all of the six tables are not booked THEN...
+        // GET all the tables with the false booked records
     }
 
     async function bookTable(tableName) {
@@ -30,7 +32,7 @@ const restaurant = (db) => {
         getBookedTables,
         isTableBooked,
         cancelTableBooking,
-        editTableBooking,
+        // editTableBooking,
         getBookedTablesForUser
     }
 }

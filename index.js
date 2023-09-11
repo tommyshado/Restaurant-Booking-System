@@ -1,10 +1,37 @@
 import express from "express";
-import pgp from "pg-promise";
+import pgPromise from "pg-promise";
 import exphbs from "express-handlebars";
 import bodyParser from "body-parser";
 import flash from "flash-express";
+import "dotenv/config";
+// service import
+import restaurant from "./services/restaurant.js";
 
-const app = express()
+const app = express();
+
+const databaseURL = process.env.DATABASE_URL;
+
+// configure ssl/ tls required
+
+const config = {
+    connectionString: databaseURL
+};
+
+if (process.env.NODE_ENV === "production") {
+    config.ssl = {
+        rejectUnauthorized: false
+    };
+};
+
+// pgp promise instance
+const pgp = pgPromise();
+
+// db instance
+const db = pgp(config);
+
+// factory function instance
+const Restaurant = restaurant(db);
+
 
 app.use(express.static('public'));
 app.use(flash());

@@ -1,8 +1,9 @@
 import assert from "assert"
 import RestaurantTableBooking from "../services/restaurant.js";
 import pgPromise from 'pg-promise';
+import "dotenv/config";
 
-const DATABASE_URL = '';
+// const DATABASE_URL = '';
 
 const connectionString = process.env.DATABASE_URL || DATABASE_URL;
 const db = pgPromise()(connectionString);
@@ -11,7 +12,7 @@ describe("The restaurant booking table", function () {
     beforeEach(async function () {
         try {
             // clean the tables before each test run
-            // await db.none("TRUNCATE TABLE table_booking RESTART IDENTITY CASCADE;");
+            await db.none("TRUNCATE TABLE table_booking RESTART IDENTITY CASCADE;");
         } catch (err) {
             console.log(err);
             throw err;
