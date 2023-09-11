@@ -32,7 +32,6 @@ const db = pgp(config);
 // factory function instance
 const Restaurant = restaurant(db);
 
-
 app.use(express.static('public'));
 app.use(flash());
 
@@ -48,9 +47,26 @@ const handlebarSetup = exphbs.engine({
 app.engine('handlebars', handlebarSetup);
 app.set('view engine', 'handlebars');
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+    // GET tables data
+    const tables = await Restaurant.getTables();
 
     res.render('index', { tables : [{}, {}, {booked : true}, {}, {}, {}]})
+});
+
+app.post("/book", async (req, res) => {
+    // GET the username, phone number and booking size
+    const { username, phone_number, booking_size } = req.body;
+
+    // INSERT booking details into the factory function
+    await Restaurant.bookTable({
+        username,
+        phone_number,
+        booking_size
+    });
+
+    // GET back to the home route
+    res.redirect("/");
 });
 
 
