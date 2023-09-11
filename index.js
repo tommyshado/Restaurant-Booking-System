@@ -2,7 +2,7 @@ import express from "express";
 import pgPromise from "pg-promise";
 import exphbs from "express-handlebars";
 import bodyParser from "body-parser";
-import flash from "flash-express";
+// import flash from "flash-express";
 import "dotenv/config";
 // service import
 import restaurant from "./services/restaurant.js";
@@ -33,7 +33,7 @@ const db = pgp(config);
 const Restaurant = restaurant(db);
 
 app.use(express.static('public'));
-app.use(flash());
+// app.use(flash());
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -51,20 +51,20 @@ app.get("/", async (req, res) => {
     // GET tables data
     const tables = await Restaurant.getTables();
 
-    res.render('index', { tables : [{}, {}, {booked : true}, {}, {}, {}]})
+    res.render('index', { tables : tables})
 });
 
 app.post("/book", async (req, res) => {
     // GET the username, phone number and booking size
-    const { username, phone_number, booking_size } = req.body;
+    const { username, phone_number, booking_size, tableId } = req.body;
 
     // INSERT booking details into the factory function
     await Restaurant.bookTable({
+        tableId,
         username,
         phone_number,
         booking_size
     });
-
     // GET back to the home route
     res.redirect("/");
 });

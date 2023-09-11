@@ -8,9 +8,23 @@ const restaurant = (db) => {
         return tables;
     }
 
+    const tables = async (tableName) => await db.manyOrNone(`select * from table_booking where table_name = '${tableName}'`);
+
     async function bookTable(booking) {
         // book a table by name
-        // INSERT booking name if not in the table_booking database
+        // CHECK the table name THEN...
+        // COMPARE the seats in the table_booking, 
+        // if it matches with the seats booking we get from the user
+        const seat = booking.booking_size;
+        const tableName = booking.tableId;
+        const name = booking.username;
+        const number = booking.phone_number;
+        const capacity = db.oneOrNone(`select capacity from table_booking where table_name = '${tableName}'`);
+
+        if (Number(capacity.capacity) < seat) return 'capacity greater than the table seats';
+        else if (!name) return "Please enter a username";
+        else if (!number) return "Please enter a contact number";
+        else if (!tables(tableName)) return "Invalid table name provided";
     }
 
     async function getBookedTables() {
