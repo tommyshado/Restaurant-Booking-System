@@ -8,7 +8,10 @@ const restaurant = (db) => {
         return tables;
     }
 
-    const tables = async (tableName) => await db.manyOrNone(`select * from table_booking where table_name = '${tableName}'`);
+    const tables = async (tableName) => {
+        const checksBooked = await db.oneOrNone(`select booked from table_booking where table_name = '${tableName}'`);
+        return checksBooked.booked;
+    }
 
     async function bookTable(booking) {
         // book a table by name
@@ -18,21 +21,21 @@ const restaurant = (db) => {
         const bookingSize = booking.booking_size;
         const tableName = booking.tableId;
         const name = booking.username;
-        const number = booking.phone_number;
+        const number = Number(booking.phone_number);
         const capacity = db.oneOrNone(`select capacity from table_booking where table_name = '${tableName}'`);
 
 
         // CHECK if number of the people booking is less than the capacity for a table THEN...
-        if (bookingSize <= capacity.capacity) {
+        if (bookingSize <= capacity.capacity && await tables(tableName) === false && name && number) {
             // update table booking and set the booked record to true
-            await db.none(`UPDATE table_booking SET booked = '${true}', SET username = '${name}', SET number_of_people = '${bookingSize}', SET contact_number = '${number}' where table_name = '${tableName}'`);
-        } else {
-            return 'capacity greater than the table seats';
+            await db.none(`UPDATE table_booking SET booked = '${TRUE}', username = '${name}', number_of_people = '${bookingSize}', contact_number = ${number} where table_name = '${tableName}'`);
         }
-
-        if (!name) return "Please enter a username";
-        if (!number) return "Please enter a contact number";
-        if (!tables(tableName)) return "Invalid table name provided";
+        else if (!name) return "Please enter a username";
+        else if (!number) return "Please enter a contact number";
+        else if (!tables(tableName)) return "Invalid table name provided";
+        else {
+            return 'capacity greater than the table seats';
+        };
     };
 
     async function getBookedTables() {
