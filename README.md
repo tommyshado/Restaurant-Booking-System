@@ -1,5 +1,8 @@
 # Restaurant-Booking-System 
 
+## Status badge
+[![Node.js CI](https://github.com/tommyshado/Restaurant-Booking-System/actions/workflows/node.js.yml/badge.svg)](https://github.com/tommyshado/Restaurant-Booking-System/actions/workflows/node.js.yml)
+
 **Scenario**: Restaurant Booking System Assessment
 
 **Background:** You are tasked with creating a restaurant booking system for a popular restaurant chain called "Delicious Delights." The system will allow customers to make reservations for tables, and restaurant staff to see these reservations via an admin dashboard.
