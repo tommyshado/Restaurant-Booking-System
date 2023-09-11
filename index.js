@@ -70,8 +70,17 @@ app.post("/book", async (req, res) => {
 });
 
 
-app.get("/bookings", (req, res) => {
-    res.render('bookings', { tables : [{}, {}, {}, {}, {}, {}]})
+app.get("/bookings", async (req, res) => {
+    // STORE the bookings made by the user as an array that contains objects
+    const bookings = await Restaurant.getBookedTables();
+    res.render('bookings', { tables : bookings});
+});
+
+app.get("/booking:username", (req, res) => {});
+
+app.post("/cancel", async (req, res) => {
+    const tableName = req.body.tableName;
+    await Restaurant.cancelTableBooking(tableName);
 });
 
 

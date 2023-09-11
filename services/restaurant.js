@@ -15,32 +15,47 @@ const restaurant = (db) => {
         // CHECK the table name THEN...
         // COMPARE the seats in the table_booking, 
         // if it matches with the seats booking we get from the user
-        const seat = booking.booking_size;
+        const bookingSize = booking.booking_size;
         const tableName = booking.tableId;
         const name = booking.username;
         const number = booking.phone_number;
         const capacity = db.oneOrNone(`select capacity from table_booking where table_name = '${tableName}'`);
 
-        if (Number(capacity.capacity) < seat) return 'capacity greater than the table seats';
-        else if (!name) return "Please enter a username";
-        else if (!number) return "Please enter a contact number";
-        else if (!tables(tableName)) return "Invalid table name provided";
-    }
+
+        // CHECK if number of the people booking is less than the capacity for a table THEN...
+        if (bookingSize <= capacity.capacity) {
+            // update table booking and set the booked record to true
+            await db.none(`UPDATE table_booking SET booked = '${true}', SET username = '${name}', SET number_of_people = '${bookingSize}', SET contact_number = '${number}' where table_name = '${tableName}'`);
+        } else {
+            return 'capacity greater than the table seats';
+        }
+
+        if (!name) return "Please enter a username";
+        if (!number) return "Please enter a contact number";
+        if (!tables(tableName)) return "Invalid table name provided";
+    };
 
     async function getBookedTables() {
         // get all the booked tables
-    }
+        // GET and return all the tables their records for booked = true
+        return await db.manyOrNone("select table_name, capacity, number_of_people, username, contact_number from table_booking where booked = $1", true);
+    };
 
     async function isTableBooked(tableName) {
         // get booked table by name
-    }
+        // SELECT booked boolean then get booked boolean value
+        return await db.manyOrNone(`select booked from table_booking where table_name = '${tableName}'`).booked;
+    };
 
     async function cancelTableBooking(tableName) {
         // cancel a table by name
+        // set the table for a table to default
+        await db.none(`UPDATE table_booking SET booked = ${false}, SET username = ${""}, SET number_of_people = '${null}', SET contact_number = '${null}' WHERE table_name= '${tableName}'`);
     }
 
     async function getBookedTablesForUser(username) {
         // get user table booking
+        return await db.oneOrNone(`select table_name from table_booking where username = '${username}'`);
     }
 
     return {
