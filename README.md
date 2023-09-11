@@ -6,6 +6,7 @@
 
 You need to:
 
+* Fork and clone this repo.
 * Use the supplied ExpressJS routes & SQL scripts.
      * Run `npm install` followed by `npm run dev` to get going.
      * The app will start on port `3000`.
