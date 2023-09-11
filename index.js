@@ -78,8 +78,9 @@ app.get("/bookings", async (req, res) => {
 
 app.get("/booking:username", (req, res) => {});
 
-app.post("/cancel", async (req, res) => {
-    const tableName = req.body.tableName;
+app.post("/cancel:tableName", async (req, res) => {
+    const tableName = req.params.tableName;
+    // get the table name from the params
     await Restaurant.cancelTableBooking(tableName);
     res.redirect("/bookings")
 });

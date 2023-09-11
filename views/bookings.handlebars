@@ -38,13 +38,13 @@
         {{#each tables}}
         <tr>
             {{!-- grab the keys  --}}
-            <td name="tableName">{{table_name}}</td>
+            <td>{{table_name}}</td>
             <td>{{capacity}}</td>
             <td>{{number_of_people}}</td>
             <td>{{username}}</td>
             <td>{{contact_number}}</td>
             <td>
-                <form action="/cancel" method="post">
+                <form action="/cancel/{{table_name}}" method="post">
                     <button class="button is-warning" onclick="return resetOnClick()" >Cancel booking</button>
                 </form>
             </td>
