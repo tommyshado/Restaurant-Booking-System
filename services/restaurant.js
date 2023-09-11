@@ -10,6 +10,7 @@ const restaurant = (db) => {
 
     async function bookTable(booking) {
         // book a table by name
+        // INSERT booking name if not in the table_booking database
     }
 
     async function getBookedTables() {
